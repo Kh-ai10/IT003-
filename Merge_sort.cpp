@@ -2,15 +2,17 @@
 #include <chrono>
 using namespace std;
 using namespace std::chrono;
-const int limit = 1000000;
+const int limit = 1e6;
+
+
 
 void merge(float *arr, int const left, int const mid, int const right)
 {
 	int const subArrayOne = mid - left + 1;
 	int const subArrayTwo = right - mid;
 
-	auto *leftArray = new int[subArrayOne],
-		*rightArray = new int[subArrayTwo];
+	auto *leftArray = new float[subArrayOne],
+		*rightArray = new float[subArrayTwo];
 
 	for (auto i = 0; i < subArrayOne; i++)
 		leftArray[i] = arr[left + i];
