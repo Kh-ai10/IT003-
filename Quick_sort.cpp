@@ -40,6 +40,7 @@ int main() {
 
         cout << "Executime_Quick_SORT_C++ data ["<< j << "]:\t" <<  duration.count() << "\tms\n";
     }
+    delete[] arr;   
     return 0;
 }
 

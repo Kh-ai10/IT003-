@@ -1,7 +1,6 @@
 #include <iostream>
-#include <algorithm>
 #include <chrono>
-#include <vector>
+#include <algorithm>
 using namespace std;
 using namespace std::chrono;
 const int limit = 1000000;
@@ -11,15 +10,14 @@ int main(){
     cin.tie(NULL);
 
     freopen("test_case1.txt", "r ", stdin);
-    vector<float>  arr(limit);
+    float *arr = new float[limit];
+  
+    for (int j = 1; j <= 10; j++){
+        for (int i = 0; i < limit; i++)         cin >> arr[i];
     
-    for (int j=1;j<=10;j++){
-        for (int i=0;i<limit ; i++){
-        cin>> arr[i];
-    }
     auto start = high_resolution_clock :: now();
-    sort(arr.begin(), arr.end());
-
+    sort(arr, arr + limit);
+ 
     auto stop = high_resolution_clock::now();
 
     auto duration = duration_cast<milliseconds>(stop - start);

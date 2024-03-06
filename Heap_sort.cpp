@@ -4,7 +4,7 @@ using namespace std;
 using namespace std::chrono;
 const int limit = 1000000;
 
-void heapify(float *arr, int N, int i)
+void heapify(float arr[], int N, int i)
 {
 
 	int largest = i;
@@ -24,7 +24,7 @@ void heapify(float *arr, int N, int i)
 	}
 }
 
-void heapSort(float *arr, int N)
+void heapSort(float arr[], int N)
 {
 
 	for (int i = N / 2 - 1; i >= 0; i--)
@@ -47,7 +47,7 @@ int main()
     freopen("test_case1.txt","r",stdin);
 
     for (int j=1;j<=10;j++){
-        for (int i=0;i<limit ; i++)  cin>> arr[i];
+        for (int i=0;i<limit ; i++)  cin>> arr[i]; 
 
         auto start = high_resolution_clock :: now(); 
         heapSort(arr, limit);
@@ -56,5 +56,6 @@ int main()
 
         cout << "Executime_Heap_SORT_data ["<< j << "]:\t" <<  duration.count() << "\tms\n";
     }
+	delete[] arr;   
 	return 0 ;
 }

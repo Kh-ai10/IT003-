@@ -23,4 +23,22 @@ with open("test_case1.txt","w") as output:
         for j in range (1_000_000):
              output.write(str(random.randint(-100_000_000, 100_000_000)/100) + ' ')
         output.write('\n')
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
  #   print([random.randint(0, 100_000_000)/100] for i in range(1_000_000)])
